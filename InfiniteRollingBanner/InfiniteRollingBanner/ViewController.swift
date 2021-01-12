@@ -12,13 +12,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     private let cellIdentifier: String = "banner_collectionview_cell"
     private var listOfBanner: [String] = ["banner1", "banner2", "banner3", "banner4", "banner5"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reloadListOfBanner()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        readyToNextImage(row: 1)
+        moveToNextImage(row: 1)
     }
     
     func reloadListOfBanner() {
@@ -40,8 +41,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell
     }
     
-    func readyToNextImage(row: Int) {
-        // 마지막 이미지일 때 이동
+    func moveToNextImage(row: Int) {
         let indexPath = IndexPath(row: row, section: 0)
         bannerCollectionView.scrollToItem(at: indexPath, at: .right, animated: false)
     }
@@ -52,12 +52,19 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print(scrollView.contentSize.width, bannerCollectionView.contentOffset.x)
-        let width = UIScreen.main.bounds.width
-        if bannerCollectionView.contentOffset.x == scrollView.contentSize.width - width {
-            self.readyToNextImage(row: 1)
-        }else if bannerCollectionView.contentOffset.x == 0.0 {
-            self.readyToNextImage(row: listOfBanner.count-2)
+        if isLastBanner(at: scrollView) {
+            self.moveToNextImage(row: 1)
+        }else if isFirstBanner() {
+            self.moveToNextImage(row: listOfBanner.count-2)
         }
+    }
+    
+    func isFirstBanner() -> Bool {
+        return bannerCollectionView.contentOffset.x == 0.0
+    }
+    
+    func isLastBanner(at scrollView: UIScrollView) -> Bool {
+        let width = UIScreen.main.bounds.width
+        return bannerCollectionView.contentOffset.x == scrollView.contentSize.width - width
     }
 }

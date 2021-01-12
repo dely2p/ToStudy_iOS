@@ -14,8 +14,17 @@ class ViewController: UIViewController {
     private var listOfBanner: [String] = ["banner1", "banner2", "banner3", "banner4", "banner5"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let firstBanner = listOfBanner.first {
+        self.reloadListOfBanner()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        readyToNextImage(row: 1)
+    }
+    
+    func reloadListOfBanner() {
+        if let firstBanner = listOfBanner.first, let lastBanner = listOfBanner.last {
             listOfBanner.append(firstBanner)
+            listOfBanner.insert(lastBanner, at: 0)
         }
     }
 }
@@ -31,10 +40,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell
     }
     
-    func readyToNextImage() {
+    func readyToNextImage(row: Int) {
         // 마지막 이미지일 때 이동
-        let indexPath = IndexPath(row: 0, section: 0)
-        bannerCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .right)
+        let indexPath = IndexPath(row: row, section: 0)
+        bannerCollectionView.scrollToItem(at: indexPath, at: .right, animated: false)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -46,7 +55,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         print(scrollView.contentSize.width, bannerCollectionView.contentOffset.x)
         let width = UIScreen.main.bounds.width
         if scrollView.contentSize.width - width == bannerCollectionView.contentOffset.x {
-            self.readyToNextImage()
+            self.readyToNextImage(row: 1)
         }
     }
 }

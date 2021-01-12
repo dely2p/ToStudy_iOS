@@ -11,9 +11,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     private let cellIdentifier: String = "banner_collectionview_cell"
-    private let listOfBanner: [String] = ["banner1", "banner2", "banner3", "banner4", "banner5"]
+    private var listOfBanner: [String] = ["banner1", "banner2", "banner3", "banner4", "banner5"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let firstBanner = listOfBanner.first {
+            listOfBanner.append(firstBanner)
+        }
     }
 }
 
@@ -28,8 +31,22 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell
     }
     
+    func readyToNextImage() {
+        // 마지막 이미지일 때 이동
+        let indexPath = IndexPath(row: 0, section: 0)
+        bannerCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .right)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.width
         return CGSize(width: width, height: width)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print(scrollView.contentSize.width, bannerCollectionView.contentOffset.x)
+        let width = UIScreen.main.bounds.width
+        if scrollView.contentSize.width - width == bannerCollectionView.contentOffset.x {
+            self.readyToNextImage()
+        }
     }
 }

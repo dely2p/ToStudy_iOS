@@ -54,8 +54,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         print(scrollView.contentSize.width, bannerCollectionView.contentOffset.x)
         let width = UIScreen.main.bounds.width
-        if scrollView.contentSize.width - width == bannerCollectionView.contentOffset.x {
+        if bannerCollectionView.contentOffset.x == scrollView.contentSize.width - width {
             self.readyToNextImage(row: 1)
+        }else if bannerCollectionView.contentOffset.x == 0.0 {
+            self.readyToNextImage(row: listOfBanner.count-2)
         }
     }
 }

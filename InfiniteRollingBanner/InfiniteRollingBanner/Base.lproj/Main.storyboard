@@ -58,11 +58,21 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="5b0-33-Ug7"/>
                                 </connections>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="FHT-1g-v5a">
+                                <rect key="frame" x="145.5" y="617" width="123" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="0ew-Th-U4d"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NrR-QR-rJc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4la-Dy-vdn"/>
+                            <constraint firstItem="FHT-1g-v5a" firstAttribute="bottom" secondItem="NrR-QR-rJc" secondAttribute="bottom" constant="-10" id="Fjj-od-tVs"/>
+                            <constraint firstItem="FHT-1g-v5a" firstAttribute="centerX" secondItem="NrR-QR-rJc" secondAttribute="centerX" id="Wcy-ZQ-M5z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NrR-QR-rJc" secondAttribute="trailing" id="d7F-d4-QZy"/>
                             <constraint firstItem="NrR-QR-rJc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mfg-Ha-A4v"/>
                             <constraint firstItem="NrR-QR-rJc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zlz-Ze-fJ8"/>
@@ -70,6 +80,7 @@
                     </view>
                     <connections>
                         <outlet property="bannerCollectionView" destination="NrR-QR-rJc" id="xbH-us-Q0E"/>
+                        <outlet property="bannerPageControl" destination="FHT-1g-v5a" id="rao-FA-VZV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

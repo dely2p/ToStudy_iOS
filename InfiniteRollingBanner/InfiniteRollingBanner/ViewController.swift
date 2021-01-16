@@ -19,11 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reloadListOfBanner()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveToAutoScroll), userInfo: nil, repeats: true)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        moveToNextImage()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
     }
     
     private func reloadListOfBanner() {
@@ -35,7 +31,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc private func moveToAutoScroll() {
+    @objc private func moveToNextPage() {
         self.checkRange()
         self.currentRow = self.currentRow + 1
         let indexPath = IndexPath(row: currentRow, section: 0)
@@ -60,10 +56,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        moveToAutoScroll()
+        moveToNextPage()
     }
     
-    func moveToNextImage() {
+    func moveInCycle() {
         let indexPath = IndexPath(row: self.currentRow, section: 0)
         bannerCollectionView.scrollToItem(at: indexPath, at: .right, animated: false)
     }
@@ -71,10 +67,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func checkRange() {
         if isLastBanner() {
             self.currentRow = 0
-            self.moveToNextImage()
+            self.moveInCycle()
         }else if isFirstBanner() {
             self.currentRow = listOfBanner.count-2
-            self.moveToNextImage()
+            self.moveInCycle()
         }
         bannerPageControl.currentPage = currentRow
     }

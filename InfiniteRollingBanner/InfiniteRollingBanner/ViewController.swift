@@ -15,11 +15,16 @@ class ViewController: UIViewController {
     private var listOfBanner: [String] = ["banner1", "banner2", "banner3", "banner4", "banner5"]
     private var timer: Timer?
     private var currentRow: Int = 1
+    private var scrollDirection: ScrollDirectionType = .right
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reloadListOfBanner()
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        moveInCycle()
     }
     
     private func reloadListOfBanner() {
@@ -33,9 +38,19 @@ class ViewController: UIViewController {
     
     @objc private func moveToNextPage() {
         self.checkRange()
-        self.currentRow = self.currentRow + 1
-        let indexPath = IndexPath(row: currentRow, section: 0)
-        bannerCollectionView.scrollToItem(at: indexPath, at: .right, animated: true)
+        bannerPageControl.currentPage = currentRow
+        if scrollDirection == .right {
+            self.currentRow = self.currentRow + 1
+            let indexPath = IndexPath(row: currentRow, section: 0)
+            bannerCollectionView.scrollToItem(at: indexPath, at: .right, animated: true)
+        }else { // scrollDirection == .left
+            self.currentRow = self.currentRow - 1
+            let indexPath = IndexPath(row: currentRow, section: 0)
+            bannerCollectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+            bannerPageControl.currentPage = currentRow - 1
+            scrollDirection = .right
+        }
+        
     }
 }
 
@@ -56,7 +71,17 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        let velocity = scrollView.panGestureRecognizer.velocity(in: scrollView)
+        if velocity.x < 0 { // move to right
+            self.scrollDirection = .right
+        }else { // move to left
+            self.scrollDirection = .left
+        }
         moveToNextPage()
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.checkRange()
     }
     
     func moveInCycle() {
@@ -65,14 +90,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func checkRange() {
-        if isLastBanner() {
+        if isLastBanner(), scrollDirection == .right {
             self.currentRow = 0
             self.moveInCycle()
-        }else if isFirstBanner() {
+        }else if isFirstBanner(), scrollDirection == .left {
             self.currentRow = listOfBanner.count-2
             self.moveInCycle()
         }
-        bannerPageControl.currentPage = currentRow
     }
     
     func isFirstBanner() -> Bool {
@@ -82,4 +106,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func isLastBanner() -> Bool {
         return self.currentRow == listOfBanner.count - 2
     }
+}
+
+enum ScrollDirectionType: Int {
+    case right, left
 }

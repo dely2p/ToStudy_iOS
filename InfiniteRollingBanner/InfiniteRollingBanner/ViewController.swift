@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var bannerCollectionView: UICollectionView!
+    @IBOutlet weak var bannerPageControl: UIPageControl!
     private let cellIdentifier: String = "banner_collectionview_cell"
     private var listOfBanner: [String] = ["banner1", "banner2", "banner3", "banner4", "banner5"]
     private var timer: Timer?
@@ -29,6 +30,8 @@ class ViewController: UIViewController {
         if let firstBanner = listOfBanner.first, let lastBanner = listOfBanner.last {
             listOfBanner.append(firstBanner)
             listOfBanner.insert(lastBanner, at: 0)
+            bannerPageControl.numberOfPages = listOfBanner.count - 2
+            bannerPageControl.currentPage = 0
         }
     }
     
@@ -56,10 +59,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return CGSize(width: width, height: width)
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let width = UIScreen.main.bounds.width
-        self.currentRow = Int(scrollView.contentOffset.x/width)
-        self.checkRange()
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        moveToAutoScroll()
     }
     
     func moveToNextImage() {
@@ -69,11 +70,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func checkRange() {
         if isLastBanner() {
-            self.currentRow = 1
+            self.currentRow = 0
+            self.moveToNextImage()
         }else if isFirstBanner() {
             self.currentRow = listOfBanner.count-2
+            self.moveToNextImage()
         }
-        self.moveToNextImage()
+        bannerPageControl.currentPage = currentRow
     }
     
     func isFirstBanner() -> Bool {
@@ -81,6 +84,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func isLastBanner() -> Bool {
-        return self.currentRow == listOfBanner.count - 1
+        return self.currentRow == listOfBanner.count - 2
     }
 }

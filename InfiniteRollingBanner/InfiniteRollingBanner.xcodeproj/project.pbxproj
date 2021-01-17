@@ -16,6 +16,7 @@
 		A301CD7B25AC9A2000FCFBC4 /* InfiniteRollingBannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301CD7A25AC9A2000FCFBC4 /* InfiniteRollingBannerTests.swift */; };
 		A301CD8625AC9A2000FCFBC4 /* InfiniteRollingBannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301CD8525AC9A2000FCFBC4 /* InfiniteRollingBannerUITests.swift */; };
 		A301CD9725AC9D4700FCFBC4 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301CD9625AC9D4700FCFBC4 /* BannerCollectionViewCell.swift */; };
+		A36ABCA725B4180A006E8F25 /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36ABCA625B4180A006E8F25 /* CustomPageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A301CD8525AC9A2000FCFBC4 /* InfiniteRollingBannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteRollingBannerUITests.swift; sourceTree = "<group>"; };
 		A301CD8725AC9A2000FCFBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A301CD9625AC9D4700FCFBC4 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		A36ABCA625B4180A006E8F25 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				A301CD6E25AC9A1F00FCFBC4 /* LaunchScreen.storyboard */,
 				A301CD7125AC9A1F00FCFBC4 /* Info.plist */,
 				A301CD9625AC9D4700FCFBC4 /* BannerCollectionViewCell.swift */,
+				A36ABCA625B4180A006E8F25 /* CustomPageControl.swift */,
 			);
 			path = InfiniteRollingBanner;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36ABCA725B4180A006E8F25 /* CustomPageControl.swift in Sources */,
 				A301CD6825AC9A1E00FCFBC4 /* ViewController.swift in Sources */,
 				A301CD6425AC9A1E00FCFBC4 /* AppDelegate.swift in Sources */,
 				A301CD9725AC9D4700FCFBC4 /* BannerCollectionViewCell.swift in Sources */,

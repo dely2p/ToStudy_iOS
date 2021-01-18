@@ -21,6 +21,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.reloadListOfBanner()
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
+        bannerPageControl.backgroundStyle = .prominent
+        bannerPageControl.preferredIndicatorImage = UIImage(named: "page_control_dot")
+        makePageIndicator(for: 0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,12 +36,27 @@ class ViewController: UIViewController {
             listOfBanner.insert(lastBanner, at: 0)
             bannerPageControl.numberOfPages = listOfBanner.count - 2
             bannerPageControl.currentPage = 0
+            makePageIndicator(for: 0)
+        }
+    }
+    
+    private func makePageIndicator(for page: Int) {
+        for index in 0..<(listOfBanner.count-2) {
+            var imageName: String = "page_control_dot"
+            print(index, page)
+            if index == page {
+                imageName = "page_control_long.fill"
+            }else {
+                imageName = "page_control_dot.fill"
+            }
+            bannerPageControl.setIndicatorImage(UIImage(named: imageName), forPage: index)
         }
     }
     
     @objc private func moveToNextPage() {
         self.checkRange()
         bannerPageControl.currentPage = currentRow
+        makePageIndicator(for: currentRow)
         if scrollDirection == .right {
             self.currentRow = self.currentRow + 1
             let indexPath = IndexPath(row: currentRow, section: 0)
@@ -48,6 +66,7 @@ class ViewController: UIViewController {
             let indexPath = IndexPath(row: currentRow, section: 0)
             bannerCollectionView.scrollToItem(at: indexPath, at: .left, animated: true)
             bannerPageControl.currentPage = currentRow - 1
+            makePageIndicator(for: currentRow-1)
             scrollDirection = .right
         }
         

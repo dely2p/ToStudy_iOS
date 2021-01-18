@@ -63,12 +63,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="0ew-Th-U4d"/>
                                 </constraints>
-                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NrR-QR-rJc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4la-Dy-vdn"/>
                             <constraint firstItem="FHT-1g-v5a" firstAttribute="bottom" secondItem="NrR-QR-rJc" secondAttribute="bottom" constant="-10" id="Fjj-od-tVs"/>
@@ -80,7 +78,7 @@
                     </view>
                     <connections>
                         <outlet property="bannerCollectionView" destination="NrR-QR-rJc" id="xbH-us-Q0E"/>
-                        <outlet property="bannerPageControl" destination="FHT-1g-v5a" id="rao-FA-VZV"/>
+                        <outlet property="bannerPageControl" destination="FHT-1g-v5a" id="jo5-0y-Oqe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

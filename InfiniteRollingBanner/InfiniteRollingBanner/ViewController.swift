@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
         bannerPageControl.backgroundStyle = .prominent
         bannerPageControl.preferredIndicatorImage = UIImage(named: "page_control_dot")
+        bannerPageControl.setIndicatorImage(UIImage(named: "page_control_long"), forPage: 0)
+//        bannerPageControl.pageIndicatorTintColor = .gray
+//        bannerPageControl.currentPageIndicatorTintColor = .white
         makePageIndicator(for: 0)
     }
     
@@ -36,7 +39,7 @@ class ViewController: UIViewController {
             listOfBanner.insert(lastBanner, at: 0)
             bannerPageControl.numberOfPages = listOfBanner.count - 2
             bannerPageControl.currentPage = 0
-            makePageIndicator(for: 0)
+//            makePageIndicator(for: 0)
         }
     }
     
@@ -45,9 +48,9 @@ class ViewController: UIViewController {
             var imageName: String = "page_control_dot"
             print(index, page)
             if index == page {
-                imageName = "page_control_long.fill"
+                imageName = "page_control_long"
             }else {
-                imageName = "page_control_dot.fill"
+                imageName = "page_control_dot"
             }
             bannerPageControl.setIndicatorImage(UIImage(named: imageName), forPage: index)
         }
@@ -56,7 +59,7 @@ class ViewController: UIViewController {
     @objc private func moveToNextPage() {
         self.checkRange()
         bannerPageControl.currentPage = currentRow
-        makePageIndicator(for: currentRow)
+//        makePageIndicator(for: currentRow)
         if scrollDirection == .right {
             self.currentRow = self.currentRow + 1
             let indexPath = IndexPath(row: currentRow, section: 0)
@@ -66,7 +69,7 @@ class ViewController: UIViewController {
             let indexPath = IndexPath(row: currentRow, section: 0)
             bannerCollectionView.scrollToItem(at: indexPath, at: .left, animated: true)
             bannerPageControl.currentPage = currentRow - 1
-            makePageIndicator(for: currentRow-1)
+//            makePageIndicator(for: currentRow-1)
             scrollDirection = .right
         }
         

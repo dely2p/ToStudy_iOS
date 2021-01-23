@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
         bannerPageControl.backgroundStyle = .prominent
         bannerPageControl.preferredIndicatorImage = UIImage(named: "page_control_dot")
+        bannerPageControl.setIndicatorImage(UIImage(named: "page_control_long"), forPage: 0)
+//        bannerPageControl.pageIndicatorTintColor = .gray
+//        bannerPageControl.currentPageIndicatorTintColor = .white
         makePageIndicator(for: 0)
     }
     
@@ -36,21 +39,27 @@ class ViewController: UIViewController {
             listOfBanner.insert(lastBanner, at: 0)
             bannerPageControl.numberOfPages = listOfBanner.count - 2
             bannerPageControl.currentPage = 0
-            makePageIndicator(for: 0)
+//            makePageIndicator(for: 0)
         }
     }
     
     private func makePageIndicator(for page: Int) {
+//        for index in 0..<(listOfBanner.count-2) {
+//            var imageName: String = "page_control_dot"
+//            if index == page {
+//                imageName = "page_control_long.fill"
+//            }else {
+//                imageName = "page_control_dot.fill"
+//            }
+//            print(page)
+//            bannerPageControl.setIndicatorImage(UIImage(named: imageName), forPage: index)
+//        }
+        
         for index in 0..<(listOfBanner.count-2) {
-            var imageName: String = "page_control_dot"
-            print(index, page)
-            if index == page {
-                imageName = "page_control_long.fill"
-            }else {
-                imageName = "page_control_dot.fill"
-            }
-            bannerPageControl.setIndicatorImage(UIImage(named: imageName), forPage: index)
+            bannerPageControl.setIndicatorImage(UIImage(named: "page_control_dot"), forPage: index)
+            bannerPageControl.pageIndicatorTintColor = nil
         }
+        bannerPageControl.setIndicatorImage(UIImage(named: "page_control_long"), forPage: page)
     }
     
     @objc private func moveToNextPage() {
@@ -66,7 +75,7 @@ class ViewController: UIViewController {
             let indexPath = IndexPath(row: currentRow, section: 0)
             bannerCollectionView.scrollToItem(at: indexPath, at: .left, animated: true)
             bannerPageControl.currentPage = currentRow - 1
-            makePageIndicator(for: currentRow-1)
+//            makePageIndicator(for: currentRow-1)
             scrollDirection = .right
         }
         

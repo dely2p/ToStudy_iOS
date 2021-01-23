@@ -44,22 +44,28 @@ class ViewController: UIViewController {
     }
     
     private func makePageIndicator(for page: Int) {
+//        for index in 0..<(listOfBanner.count-2) {
+//            var imageName: String = "page_control_dot"
+//            if index == page {
+//                imageName = "page_control_long.fill"
+//            }else {
+//                imageName = "page_control_dot.fill"
+//            }
+//            print(page)
+//            bannerPageControl.setIndicatorImage(UIImage(named: imageName), forPage: index)
+//        }
+        
         for index in 0..<(listOfBanner.count-2) {
-            var imageName: String = "page_control_dot"
-            print(index, page)
-            if index == page {
-                imageName = "page_control_long"
-            }else {
-                imageName = "page_control_dot"
-            }
-            bannerPageControl.setIndicatorImage(UIImage(named: imageName), forPage: index)
+            bannerPageControl.setIndicatorImage(UIImage(named: "page_control_dot"), forPage: index)
+            bannerPageControl.pageIndicatorTintColor = nil
         }
+        bannerPageControl.setIndicatorImage(UIImage(named: "page_control_long"), forPage: page)
     }
     
     @objc private func moveToNextPage() {
         self.checkRange()
         bannerPageControl.currentPage = currentRow
-//        makePageIndicator(for: currentRow)
+        makePageIndicator(for: currentRow)
         if scrollDirection == .right {
             self.currentRow = self.currentRow + 1
             let indexPath = IndexPath(row: currentRow, section: 0)

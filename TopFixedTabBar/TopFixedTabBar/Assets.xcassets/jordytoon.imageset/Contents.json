@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "jordytoon.jpeg",
+      "filename" : "jordytoon.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "jordytoon-1.jpeg",
+      "filename" : "jordytoon-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "jordytoon-2.jpeg",
+      "filename" : "jordytoon-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

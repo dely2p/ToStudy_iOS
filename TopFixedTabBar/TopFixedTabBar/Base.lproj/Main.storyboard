@@ -105,12 +105,12 @@
         <!--View Controller-->
         <scene sceneID="mUM-QR-3Ml">
             <objects>
-                <viewController id="nWx-OF-3ZM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nWx-OF-3ZM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OgS-9K-Zcg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="pQT-6I-U1w"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWd-AR-LX9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -120,12 +120,12 @@
         <!--View Controller-->
         <scene sceneID="EWu-9C-loG">
             <objects>
-                <viewController id="gKo-f0-1GA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gKo-f0-1GA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eOs-lw-Ri0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6gC-kk-iFi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HE6-hT-tL0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,7 +135,7 @@
         <!--Page View Controller-->
         <scene sceneID="y1U-WT-0WD">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Apb-to-hka" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Apb-to-hka" customClass="PageViewController" customModule="TopFixedTabBar" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aer-Rw-920" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1054" y="80"/>
@@ -144,6 +144,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

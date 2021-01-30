@@ -8,15 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     @IBOutlet weak var tabBarCollectionView: UICollectionView!
-    private let listOfContents: [String] = []
+    private let listOfContents: [String] = ["first", "second"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -26,11 +22,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = tabBarCollectionView.dequeueReusableCell(withReuseIdentifier: "tabBarCell", for: indexPath) as?TabBarCollectionViewCell else { return UICollectionViewCell() }
+        cell.titleLabel.text = listOfContents[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = UIScreen.main.bounds.width
+        let width = UIScreen.main.bounds.width/2
         return CGSize(width: width, height: collectionView.frame.height)
     }
 }

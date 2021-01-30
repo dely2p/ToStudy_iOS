@@ -25,34 +25,43 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qtx-XI-R4O">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="EES-Yg-1ga">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="EES-Yg-1ga" secondAttribute="bottom" id="Ddw-13-bDW"/>
+                                                    <constraint firstItem="EES-Yg-1ga" firstAttribute="leading" secondItem="Qtx-XI-R4O" secondAttribute="leading" id="O10-Lz-tXZ"/>
+                                                    <constraint firstItem="EES-Yg-1ga" firstAttribute="top" secondItem="Qtx-XI-R4O" secondAttribute="top" id="Qcl-Gn-UIg"/>
                                                     <constraint firstAttribute="height" constant="300" id="bg7-xI-idy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="EES-Yg-1ga" secondAttribute="trailing" id="ehg-Vx-Mbz"/>
                                                 </constraints>
                                             </view>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="tabBarCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f8f-Mm-4Yi">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f8f-Mm-4Yi">
                                                 <rect key="frame" x="0.0" y="300" width="414" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="yXm-o5-XRu"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wXn-wh-xVw">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wXn-wh-xVw">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qXV-kA-oQP" customClass="TabBarCollectionViewCell" customModule="TopFixedTabBar" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tabBarCell" id="qXV-kA-oQP" customClass="TabBarCollectionViewCell" customModule="TopFixedTabBar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="-39" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QaZ-Vt-o1L">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvo-Dl-nog">
-                                                                    <rect key="frame" x="43" y="53" width="42" height="21"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvo-Dl-nog">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -126,31 +135,64 @@
             </objects>
             <point key="canvasLocation" x="95.652173913043484" y="79.6875"/>
         </scene>
-        <!--View Controller-->
+        <!--Jordy Image View Controller-->
         <scene sceneID="mUM-QR-3Ml">
             <objects>
-                <viewController storyboardIdentifier="firstView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nWx-OF-3ZM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nWx-OF-3ZM" customClass="JordyImageViewController" customModule="TopFixedTabBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OgS-9K-Zcg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ui-lk-bkx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pQT-6I-U1w"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="pQT-6I-U1w" firstAttribute="bottom" secondItem="4ui-lk-bkx" secondAttribute="bottom" id="1SU-D9-aTc"/>
+                            <constraint firstItem="4ui-lk-bkx" firstAttribute="leading" secondItem="pQT-6I-U1w" secondAttribute="leading" id="Y8x-1p-UNd"/>
+                            <constraint firstItem="pQT-6I-U1w" firstAttribute="trailing" secondItem="4ui-lk-bkx" secondAttribute="trailing" id="et8-NC-uT7"/>
+                            <constraint firstItem="4ui-lk-bkx" firstAttribute="top" secondItem="pQT-6I-U1w" secondAttribute="top" id="xgT-3g-Mrr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="jordyImageView" destination="4ui-lk-bkx" id="nV1-HN-AMv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWd-AR-LX9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1063" y="760"/>
         </scene>
-        <!--View Controller-->
+        <!--Jordy Web View Controller-->
         <scene sceneID="EWu-9C-loG">
             <objects>
-                <viewController storyboardIdentifier="secondView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gKo-f0-1GA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gKo-f0-1GA" customClass="JordyWebViewController" customModule="TopFixedTabBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eOs-lw-Ri0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jd-Vk-EJi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6gC-kk-iFi"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <constraints>
+                            <constraint firstItem="2Jd-Vk-EJi" firstAttribute="leading" secondItem="6gC-kk-iFi" secondAttribute="leading" id="3kP-kU-a5Z"/>
+                            <constraint firstItem="6gC-kk-iFi" firstAttribute="trailing" secondItem="2Jd-Vk-EJi" secondAttribute="trailing" id="CfZ-SI-0z6"/>
+                            <constraint firstItem="2Jd-Vk-EJi" firstAttribute="top" secondItem="6gC-kk-iFi" secondAttribute="top" id="EHu-wM-ycN"/>
+                            <constraint firstItem="6gC-kk-iFi" firstAttribute="bottom" secondItem="2Jd-Vk-EJi" secondAttribute="bottom" id="qbR-5L-Xke"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="jordyWebView" destination="2Jd-Vk-EJi" id="5J6-dC-V6N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HE6-hT-tL0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,6 +208,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="banner" width="112.5" height="112.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

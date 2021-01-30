@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A374CBE225C5AC4A0044D969 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374CBE125C5AC4A0044D969 /* PageViewController.swift */; };
+		A374CBE725C5CE010044D969 /* TabBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374CBE625C5CE010044D969 /* TabBarCollectionViewCell.swift */; };
 		A3832F0925BC945900B38E31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3832F0825BC945900B38E31 /* AppDelegate.swift */; };
 		A3832F0B25BC945900B38E31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3832F0A25BC945900B38E31 /* SceneDelegate.swift */; };
 		A3832F0D25BC945900B38E31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3832F0C25BC945900B38E31 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		A374CBE125C5AC4A0044D969 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		A374CBE625C5CE010044D969 /* TabBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		A3832F0525BC945900B38E31 /* TopFixedTabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopFixedTabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3832F0825BC945900B38E31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3832F0A25BC945900B38E31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +83,6 @@
 		A3832EFC25BC945800B38E31 = {
 			isa = PBXGroup;
 			children = (
-				A374CBE125C5AC4A0044D969 /* PageViewController.swift */,
 				A3832F0725BC945900B38E31 /* TopFixedTabBar */,
 				A3832F1E25BC945B00B38E31 /* TopFixedTabBarTests */,
 				A3832F2925BC945B00B38E31 /* TopFixedTabBarUITests */,
@@ -102,9 +103,11 @@
 		A3832F0725BC945900B38E31 /* TopFixedTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				A374CBE125C5AC4A0044D969 /* PageViewController.swift */,
 				A3832F0825BC945900B38E31 /* AppDelegate.swift */,
 				A3832F0A25BC945900B38E31 /* SceneDelegate.swift */,
 				A3832F0C25BC945900B38E31 /* ViewController.swift */,
+				A374CBE625C5CE010044D969 /* TabBarCollectionViewCell.swift */,
 				A3832F0E25BC945900B38E31 /* Main.storyboard */,
 				A3832F1125BC945A00B38E31 /* Assets.xcassets */,
 				A3832F1325BC945A00B38E31 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3832F0D25BC945900B38E31 /* ViewController.swift in Sources */,
+				A374CBE725C5CE010044D969 /* TabBarCollectionViewCell.swift in Sources */,
 				A3832F0925BC945900B38E31 /* AppDelegate.swift in Sources */,
 				A3832F0B25BC945900B38E31 /* SceneDelegate.swift in Sources */,
 				A374CBE225C5AC4A0044D969 /* PageViewController.swift in Sources */,

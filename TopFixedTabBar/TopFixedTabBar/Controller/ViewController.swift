@@ -30,4 +30,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let width = UIScreen.main.bounds.width/2
         return CGSize(width: width, height: collectionView.frame.height)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        NotificationCenter.default.post(name: .changePageView, object: indexPath.row)
+    }
+}
+
+
+extension NSNotification.Name {
+    static let changePageView = Notification.Name("changePageView")
 }

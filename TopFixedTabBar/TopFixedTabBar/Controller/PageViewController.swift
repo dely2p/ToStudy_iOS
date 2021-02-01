@@ -20,10 +20,17 @@ class PageViewController: UIPageViewController {
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(changePageView), name: .changePageView, object: nil)
         
         if let firstVC = VCArray.first {
             setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
+    }
+    
+    @objc func changePageView(_ notification: Notification) {
+        guard let index = notification.object as? Int else { return }
+        let indexVC = VCArray[index]
+        setViewControllers([indexVC], direction: .forward, animated: true, completion: nil)
     }
 }
 

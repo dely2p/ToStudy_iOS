@@ -15,6 +15,7 @@ class PageViewController: UIPageViewController {
     private func VCInstance(name: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
     }
+    private var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,14 @@ class PageViewController: UIPageViewController {
     @objc func changePageView(_ notification: Notification) {
         guard let index = notification.object as? Int else { return }
         let indexVC = VCArray[index]
-        setViewControllers([indexVC], direction: .forward, animated: true, completion: nil)
+        var direction: UIPageViewController.NavigationDirection = .forward
+        if index < currentIndex {
+            direction = .reverse
+        }else {
+            direction = .forward
+        }
+        self.currentIndex = index
+        setViewControllers([indexVC], direction: direction, animated: true, completion: nil)
     }
 }
 

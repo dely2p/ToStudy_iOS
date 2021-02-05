@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tabBarCollectionView: UICollectionView!
     private let listOfContents: [String] = ["first", "second"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.scrollView.delegate = self
     }
 }
 
@@ -33,6 +35,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         NotificationCenter.default.post(name: .changePageView, object: indexPath.row)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(self.scrollView.contentOffset.y, tabBarCollectionView.frame.origin.y)
+        if self.scrollView.contentOffset.y >= tabBarCollectionView.frame.origin.y {
+            self.scrollView.contentOffset.y = tabBarCollectionView.frame.origin.y
+        }
     }
 }
 

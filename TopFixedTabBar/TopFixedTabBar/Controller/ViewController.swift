@@ -41,6 +41,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         print(self.scrollView.contentOffset.y, tabBarCollectionView.frame.origin.y)
         if self.scrollView.contentOffset.y >= tabBarCollectionView.frame.origin.y {
             self.scrollView.contentOffset.y = tabBarCollectionView.frame.origin.y
+//            self.scrollView.isScrollEnabled = false
+            NotificationCenter.default.post(name: .insideScrollOn, object: nil)
         }
     }
 }
@@ -48,4 +50,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
 extension NSNotification.Name {
     static let changePageView = Notification.Name("changePageView")
+    static let insideScrollOn = Notification.Name("insideScrollOn")
+    static let insideScrollOff = Notification.Name("insideScrollOff")
 }

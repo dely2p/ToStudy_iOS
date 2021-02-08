@@ -14,6 +14,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollOn), name: .insideScrollOff, object: nil)
+    }
+    
+    @objc private func scrollOn() {
+        self.scrollView.isScrollEnabled = true
     }
 }
 
@@ -38,10 +43,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(self.scrollView.contentOffset.y, tabBarCollectionView.frame.origin.y)
         if self.scrollView.contentOffset.y >= tabBarCollectionView.frame.origin.y {
             self.scrollView.contentOffset.y = tabBarCollectionView.frame.origin.y
-//            self.scrollView.isScrollEnabled = false
+            self.scrollView.isScrollEnabled = false
             NotificationCenter.default.post(name: .insideScrollOn, object: nil)
         }
     }

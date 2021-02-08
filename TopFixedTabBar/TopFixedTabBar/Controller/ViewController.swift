@@ -7,11 +7,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tabBarCollectionView: UICollectionView!
     private let listOfContents: [String] = ["first", "second"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.scrollView.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(scrollOn), name: .insideScrollOff, object: nil)
+    }
+    
+    @objc private func scrollOn() {
+        self.scrollView.isScrollEnabled = true
     }
 }
 
@@ -34,9 +41,19 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         NotificationCenter.default.post(name: .changePageView, object: indexPath.row)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.scrollView.contentOffset.y >= tabBarCollectionView.frame.origin.y {
+            self.scrollView.contentOffset.y = tabBarCollectionView.frame.origin.y
+            self.scrollView.isScrollEnabled = false
+            NotificationCenter.default.post(name: .insideScrollOn, object: nil)
+        }
+    }
 }
 
 
 extension NSNotification.Name {
     static let changePageView = Notification.Name("changePageView")
+    static let insideScrollOn = Notification.Name("insideScrollOn")
+    static let insideScrollOff = Notification.Name("insideScrollOff")
 }

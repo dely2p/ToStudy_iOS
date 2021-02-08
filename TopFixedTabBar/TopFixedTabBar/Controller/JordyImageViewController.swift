@@ -24,8 +24,8 @@ class JordyImageViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(self.scrollView.contentOffset.y)
         if self.scrollView.contentOffset.y <= 0 {
-            self.scrollView.contentOffset.y = 0
             self.scrollView.isScrollEnabled = false
             NotificationCenter.default.post(name: .insideScrollOff, object: nil)
         }

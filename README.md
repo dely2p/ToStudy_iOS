@@ -38,3 +38,5 @@
 	- 컨테이너뷰에 PageVC embed 되도록 구현
 	-  pageVC 첫번째에는 이미지 뷰, 두번째에는 webView 구현
 	-  pageView 스크롤 시 상단 탭 바도 변경되고, 상단 탭 바 클릭 시 pageView도 변경되도록 구현
+
+<img src="img/top_fixed_tabbar.gif" width="40%">

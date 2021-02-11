@@ -19,6 +19,10 @@ class JordyImageViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.isScrollEnabled = false
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.scrollView.contentOffset.y = 0.0
+    }
+    
     @objc private func scrollOn() {
         self.scrollView.isScrollEnabled = true
     }

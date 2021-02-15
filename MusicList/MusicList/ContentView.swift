@@ -10,19 +10,22 @@ import SwiftUI
 struct ContentView: View {
     var listOfMusic: [Music] = []
     var body: some View {
-        List(listOfMusic) { music in
-            Image(music.thumbnailName)
-                .resizable()
-                .frame(width: 30, height: 30)
-                .cornerRadius(8)
+        NavigationView {
+            List(listOfMusic) { music in
+                Image(music.thumbnailName)
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .cornerRadius(8)
+                    
                 
-            
-            VStack(alignment: .leading) {
-                Text(music.name)
-                Text("play count: \(music.playCount)")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                VStack(alignment: .leading) {
+                    Text(music.name)
+                    Text("play count: \(music.playCount)")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
             }
+            .navigationTitle("2ND DESIRE[TASTY]")
         }
     }
 }

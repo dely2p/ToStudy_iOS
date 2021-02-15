@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    var listOfMusic: [Music] = []
     var body: some View {
-        List(0 ..< 5) { item in
-            Image(systemName: "photo")
+        List(listOfMusic) { music in
+            Image(music.thumbnailName)
+                .resizable()
+                .frame(width: 30, height: 30)
+                .cornerRadius(8)
+                
+            
             VStack(alignment: .leading) {
-                Text("My MusicList")
-                Text("play count")
+                Text(music.name)
+                Text("play count: \(music.playCount)")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
@@ -23,6 +29,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(listOfMusic: data)
     }
 }

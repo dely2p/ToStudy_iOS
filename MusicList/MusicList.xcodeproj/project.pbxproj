@@ -99,10 +99,10 @@
 			children = (
 				A32102E625D971C0002E55A8 /* MusicListApp.swift */,
 				A32102E825D971C0002E55A8 /* ContentView.swift */,
+				A39F1DC725DABB6600357A1E /* Music.swift */,
 				A32102EA25D971C5002E55A8 /* Assets.xcassets */,
 				A32102EF25D971C5002E55A8 /* Info.plist */,
 				A32102EC25D971C5002E55A8 /* Preview Content */,
-				A39F1DC725DABB6600357A1E /* Music.swift */,
 			);
 			path = MusicList;
 			sourceTree = "<group>";

@@ -22,7 +22,7 @@
 
 <img src="img/infinite_rolling.png" width="40%">
 
---
+---
 
 > 상단 탭바 고정 스크롤 뷰 만들기 (2021.01.24 - )
 
@@ -40,3 +40,11 @@
 	-  pageView 스크롤 시 상단 탭 바도 변경되고, 상단 탭 바 클릭 시 pageView도 변경되도록 구현
 
 <img src="img/top_fixed_tabbar.gif" width="40%">
+
+---
+
+> SwiftUI MusicList (2021.01.24 - )
+
+- SwiftUI 튜토리얼 일부 따라해보기
+
+<img src="img/swiftUI_music_list.gif" width="40%">

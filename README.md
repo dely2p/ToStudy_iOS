@@ -43,8 +43,11 @@
 
 ---
 
-> SwiftUI MusicList (2021.01.24 - )
+> SwiftUI MusicList (2021.02.14 - )
 
 - SwiftUI 튜토리얼 일부 따라해보기
+	- 리스트로 컨텐츠 나열해서 보여주기
+	- 이미지, title, subtitle 형식의 셀 만들기
+	- 셀 클릭시 네비게이션 컨트롤러 화면이동
 
 <img src="img/swiftUI_music_list.gif" width="40%">

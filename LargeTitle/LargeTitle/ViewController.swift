@@ -15,6 +15,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         pocketmonTableView.delegate = self
         pocketmonTableView.dataSource = self
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        
+        self.title = "TextMemo"
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        self.navigationItem.searchController = search
     }
 }
 
@@ -30,3 +37,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension ViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+}

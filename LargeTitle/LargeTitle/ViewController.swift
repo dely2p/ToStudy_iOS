@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var pocketmonTableView: UITableView!
     private var pocketmon: [String] = ["피카츄", "라이츄", "파이리", "꼬부기", "버터풀", "야도란", "피죤투", "또가스"]
+    private var cellIdentifier: String = "pocketmonCell"
     private var filteredPockmon: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +33,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = pocketmonTableView.dequeueReusableCell(withIdentifier: "pocketmonCell") else { return UITableViewCell() }
-        cell.textLabel?.text = self.filteredPockmon.isEmpty ? self.pocketmon[indexPath.row] : self.filteredPockmon[indexPath.row]
+        guard let cell = pocketmonTableView.dequeueReusableCell(withIdentifier: cellIdentifier) else { return UITableViewCell() }
+        cell.textLabel?.text = textOfPocketmon(by: indexPath)
         return cell
+    }
+    
+    private func textOfPocketmon(by indexPath: IndexPath) -> String {
+        return self.filteredPockmon.isEmpty ? self.pocketmon[indexPath.row] : self.filteredPockmon[indexPath.row]
     }
 }
 

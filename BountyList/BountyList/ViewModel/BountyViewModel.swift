@@ -19,11 +19,15 @@ class BountyViewModel{
         BountyInfo(name: "zoro", bounty: 1200000)
     ]
     
+    var sortedList: [BountyInfo] {
+        return bountyInfoList.sorted(by: { $0.bounty > $1.bounty } )
+    }
+    
     var numOfBountyInfoList: Int {
         return bountyInfoList.count
     }
     
     func bountyInfo(at index: Int) -> BountyInfo {
-        return bountyInfoList[index]
+        return sortedList[index]
     }
 }

@@ -111,6 +111,10 @@
 		A38F758825EFD41B001328B4 /* BountyList */ = {
 			isa = PBXGroup;
 			children = (
+				A38F75DD25EFF6BE001328B4 /* Model */,
+				A38F75DC25EFF6AD001328B4 /* View */,
+				A38F75DB25EFF68D001328B4 /* ViewController */,
+				A38F75DA25EFF676001328B4 /* ViewModel */,
 				A38F758925EFD41B001328B4 /* AppDelegate.swift */,
 				A38F758B25EFD41B001328B4 /* SceneDelegate.swift */,
 				A38F758D25EFD41B001328B4 /* ViewController.swift */,
@@ -118,12 +122,6 @@
 				A38F759225EFD421001328B4 /* Assets.xcassets */,
 				A38F759425EFD421001328B4 /* LaunchScreen.storyboard */,
 				A38F759725EFD421001328B4 /* Info.plist */,
-				A38F75BC25EFD4A1001328B4 /* BountyViewController.swift */,
-				A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */,
-				A38F75C625EFE58F001328B4 /* DetailViewController.swift */,
-				A38F75CB25EFEEC2001328B4 /* BountyInfo.swift */,
-				A38F75D025EFF1DF001328B4 /* BountyViewModel.swift */,
-				A38F75D525EFF354001328B4 /* DetailViewModel.swift */,
 			);
 			path = BountyList;
 			sourceTree = "<group>";
@@ -144,6 +142,40 @@
 				A38F75AD25EFD421001328B4 /* Info.plist */,
 			);
 			path = BountyListUITests;
+			sourceTree = "<group>";
+		};
+		A38F75DA25EFF676001328B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A38F75D025EFF1DF001328B4 /* BountyViewModel.swift */,
+				A38F75D525EFF354001328B4 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A38F75DB25EFF68D001328B4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A38F75BC25EFD4A1001328B4 /* BountyViewController.swift */,
+				A38F75C625EFE58F001328B4 /* DetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A38F75DC25EFF6AD001328B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A38F75DD25EFF6BE001328B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A38F75CB25EFEEC2001328B4 /* BountyInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

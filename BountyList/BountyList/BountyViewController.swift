@@ -25,19 +25,9 @@ class BountyViewController: UIViewController {
     // > BountyViewModel을 만들고, 뷰레이어에서 필요한 메서드 만들기
     // > 모델 가지고 있기 .. BountyInfo 등
     
-    let bountyInfoList: [BountyInfo] = [
-        BountyInfo(name: "brook", bounty: 33000000),
-        BountyInfo(name: "chopper", bounty: 50),
-        BountyInfo(name: "franky", bounty: 4400000),
-        BountyInfo(name: "luffy", bounty: 300000),
-        BountyInfo(name: "nami", bounty: 16000000),
-        BountyInfo(name: "robin", bounty: 80000000),
-        BountyInfo(name: "sanji", bounty: 77000000),
-        BountyInfo(name: "zoro", bounty: 1200000)
-    ]
-    
-//    let nameList = ["brook", "chopper", "franky", "luffy", "nami", "robin", "sanji", "zoro"]
-//    let bountyList = [33000000, 50, 4400000, 300000, 16000000, 80000000, 77000000, 1200000]
+
+    let viewModel = BountyViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +37,7 @@ class BountyViewController: UIViewController {
         if segue.identifier == "showDetail" {
             let vc = segue.destination as? DetailViewController
             if let index = sender as? Int {
-                vc?.bountyInfo = bountyInfoList[index]
+                vc?.detailViewModel.update(model: viewModel.bountyInfo(at: index))
             }
         }
     }
@@ -55,12 +45,12 @@ class BountyViewController: UIViewController {
 
 extension BountyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bountyInfoList.count
+        return viewModel.numOfBountyInfoList
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
-        let bountyInfo = bountyInfoList[indexPath.row]
+        let bountyInfo = viewModel.bountyInfo(at: indexPath.row)
         cell.imgView.image = bountyInfo.image
         cell.nameLabel.text = bountyInfo.name
         cell.bountyLabel.text = "\(bountyInfo.bounty)"

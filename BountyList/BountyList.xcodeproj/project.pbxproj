@@ -19,6 +19,8 @@
 		A38F75C225EFD8E9001328B4 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */; };
 		A38F75C725EFE58F001328B4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75C625EFE58F001328B4 /* DetailViewController.swift */; };
 		A38F75CC25EFEEC2001328B4 /* BountyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75CB25EFEEC2001328B4 /* BountyInfo.swift */; };
+		A38F75D125EFF1DF001328B4 /* BountyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75D025EFF1DF001328B4 /* BountyViewModel.swift */; };
+		A38F75D625EFF354001328B4 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75D525EFF354001328B4 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		A38F75C625EFE58F001328B4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A38F75CB25EFEEC2001328B4 /* BountyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyInfo.swift; sourceTree = "<group>"; };
+		A38F75D025EFF1DF001328B4 /* BountyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyViewModel.swift; sourceTree = "<group>"; };
+		A38F75D525EFF354001328B4 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */,
 				A38F75C625EFE58F001328B4 /* DetailViewController.swift */,
 				A38F75CB25EFEEC2001328B4 /* BountyInfo.swift */,
+				A38F75D025EFF1DF001328B4 /* BountyViewModel.swift */,
+				A38F75D525EFF354001328B4 /* DetailViewModel.swift */,
 			);
 			path = BountyList;
 			sourceTree = "<group>";
@@ -274,7 +280,9 @@
 				A38F75BD25EFD4A1001328B4 /* BountyViewController.swift in Sources */,
 				A38F758A25EFD41B001328B4 /* AppDelegate.swift in Sources */,
 				A38F75C725EFE58F001328B4 /* DetailViewController.swift in Sources */,
+				A38F75D625EFF354001328B4 /* DetailViewModel.swift in Sources */,
 				A38F758C25EFD41B001328B4 /* SceneDelegate.swift in Sources */,
+				A38F75D125EFF1DF001328B4 /* BountyViewModel.swift in Sources */,
 				A38F75CC25EFEEC2001328B4 /* BountyInfo.swift in Sources */,
 				A38F75C225EFD8E9001328B4 /* ListTableViewCell.swift in Sources */,
 			);

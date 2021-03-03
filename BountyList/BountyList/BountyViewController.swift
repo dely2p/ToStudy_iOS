@@ -9,6 +9,8 @@ import UIKit
 
 class BountyViewController: UIViewController {
 
+    let nameList = ["brook", "chopper", "franky", "luffy", "nami", "robin", "sanji", "zoro"]
+    let bountyList = [33000000, 50, 4400000, 300000, 16000000, 80000000, 77000000, 1200000]
     override func viewDidLoad() {
         super.viewDidLoad()
         

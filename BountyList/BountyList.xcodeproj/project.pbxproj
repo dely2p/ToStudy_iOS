@@ -16,6 +16,7 @@
 		A38F75A125EFD421001328B4 /* BountyListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75A025EFD421001328B4 /* BountyListTests.swift */; };
 		A38F75AC25EFD421001328B4 /* BountyListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75AB25EFD421001328B4 /* BountyListUITests.swift */; };
 		A38F75BD25EFD4A1001328B4 /* BountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75BC25EFD4A1001328B4 /* BountyViewController.swift */; };
+		A38F75C225EFD8E9001328B4 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A38F75AB25EFD421001328B4 /* BountyListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyListUITests.swift; sourceTree = "<group>"; };
 		A38F75AD25EFD421001328B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A38F75BC25EFD4A1001328B4 /* BountyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyViewController.swift; sourceTree = "<group>"; };
+		A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				A38F759425EFD421001328B4 /* LaunchScreen.storyboard */,
 				A38F759725EFD421001328B4 /* Info.plist */,
 				A38F75BC25EFD4A1001328B4 /* BountyViewController.swift */,
+				A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */,
 			);
 			path = BountyList;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				A38F75BD25EFD4A1001328B4 /* BountyViewController.swift in Sources */,
 				A38F758A25EFD41B001328B4 /* AppDelegate.swift in Sources */,
 				A38F758C25EFD41B001328B4 /* SceneDelegate.swift in Sources */,
+				A38F75C225EFD8E9001328B4 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

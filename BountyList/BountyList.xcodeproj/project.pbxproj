@@ -18,6 +18,7 @@
 		A38F75BD25EFD4A1001328B4 /* BountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75BC25EFD4A1001328B4 /* BountyViewController.swift */; };
 		A38F75C225EFD8E9001328B4 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */; };
 		A38F75C725EFE58F001328B4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75C625EFE58F001328B4 /* DetailViewController.swift */; };
+		A38F75CC25EFEEC2001328B4 /* BountyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F75CB25EFEEC2001328B4 /* BountyInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A38F75BC25EFD4A1001328B4 /* BountyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyViewController.swift; sourceTree = "<group>"; };
 		A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		A38F75C625EFE58F001328B4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A38F75CB25EFEEC2001328B4 /* BountyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				A38F75BC25EFD4A1001328B4 /* BountyViewController.swift */,
 				A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */,
 				A38F75C625EFE58F001328B4 /* DetailViewController.swift */,
+				A38F75CB25EFEEC2001328B4 /* BountyInfo.swift */,
 			);
 			path = BountyList;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				A38F758A25EFD41B001328B4 /* AppDelegate.swift in Sources */,
 				A38F75C725EFE58F001328B4 /* DetailViewController.swift in Sources */,
 				A38F758C25EFD41B001328B4 /* SceneDelegate.swift in Sources */,
+				A38F75CC25EFEEC2001328B4 /* BountyInfo.swift in Sources */,
 				A38F75C225EFD8E9001328B4 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A388BC9925F12C8D004E7C4B /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388BC9825F12C8D004E7C4B /* GridCollectionViewCell.swift */; };
 		A38F758A25EFD41B001328B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F758925EFD41B001328B4 /* AppDelegate.swift */; };
 		A38F758C25EFD41B001328B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F758B25EFD41B001328B4 /* SceneDelegate.swift */; };
 		A38F758E25EFD41B001328B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38F758D25EFD41B001328B4 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A388BC9825F12C8D004E7C4B /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		A38F758625EFD41B001328B4 /* BountyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BountyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A38F758925EFD41B001328B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A38F758B25EFD41B001328B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				A38F75C125EFD8E9001328B4 /* ListTableViewCell.swift */,
+				A388BC9825F12C8D004E7C4B /* GridCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				A38F75BD25EFD4A1001328B4 /* BountyViewController.swift in Sources */,
 				A38F758A25EFD41B001328B4 /* AppDelegate.swift in Sources */,
 				A38F75C725EFE58F001328B4 /* DetailViewController.swift in Sources */,
+				A388BC9925F12C8D004E7C4B /* GridCollectionViewCell.swift in Sources */,
 				A38F75D625EFF354001328B4 /* DetailViewModel.swift in Sources */,
 				A38F758C25EFD41B001328B4 /* SceneDelegate.swift in Sources */,
 				A38F75D125EFF1DF001328B4 /* BountyViewModel.swift in Sources */,

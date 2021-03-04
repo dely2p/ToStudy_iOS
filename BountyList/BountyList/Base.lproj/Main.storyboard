@@ -200,13 +200,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W69-hQ-Z2e">
-                                <rect key="frame" x="30" y="634.5" width="354" height="30"/>
+                                <rect key="frame" x="175" y="634.5" width="64" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQF-Xd-ser">
-                                <rect key="frame" x="30" y="684.5" width="354" height="30"/>
+                                <rect key="frame" x="175" y="684.5" width="64" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -216,23 +216,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oSb-HT-9SK" firstAttribute="top" secondItem="PrR-ij-Hd1" secondAttribute="top" constant="20" id="0B5-vf-uoU"/>
-                            <constraint firstItem="PrR-ij-Hd1" firstAttribute="trailing" secondItem="bQF-Xd-ser" secondAttribute="trailing" constant="30" id="6YP-BQ-ibe"/>
                             <constraint firstItem="W69-hQ-Z2e" firstAttribute="top" secondItem="LjQ-Y4-RD3" secondAttribute="bottom" constant="20" id="7Zu-kT-QAv"/>
-                            <constraint firstItem="W69-hQ-Z2e" firstAttribute="leading" secondItem="PrR-ij-Hd1" secondAttribute="leading" constant="30" id="Bh0-43-Qra"/>
+                            <constraint firstItem="W69-hQ-Z2e" firstAttribute="centerX" secondItem="PrR-ij-Hd1" secondAttribute="centerX" id="AIo-8u-yqz"/>
                             <constraint firstItem="LjQ-Y4-RD3" firstAttribute="leading" secondItem="PrR-ij-Hd1" secondAttribute="leading" constant="20" id="DR0-fZ-H8s"/>
                             <constraint firstItem="LjQ-Y4-RD3" firstAttribute="top" secondItem="PrR-ij-Hd1" secondAttribute="top" constant="80" id="Ffl-10-z4G"/>
                             <constraint firstItem="PrR-ij-Hd1" firstAttribute="trailing" secondItem="LjQ-Y4-RD3" secondAttribute="trailing" constant="20" id="Jcs-Jp-leG"/>
-                            <constraint firstItem="PrR-ij-Hd1" firstAttribute="trailing" secondItem="W69-hQ-Z2e" secondAttribute="trailing" constant="30" id="Vyn-BP-aYd"/>
+                            <constraint firstItem="bQF-Xd-ser" firstAttribute="centerX" secondItem="PrR-ij-Hd1" secondAttribute="centerX" id="Ti0-Xt-Rp5"/>
                             <constraint firstItem="PrR-ij-Hd1" firstAttribute="trailing" secondItem="oSb-HT-9SK" secondAttribute="trailing" constant="20" id="WC3-Ou-eGE"/>
-                            <constraint firstItem="bQF-Xd-ser" firstAttribute="leading" secondItem="PrR-ij-Hd1" secondAttribute="leading" constant="30" id="iRj-0a-jaJ"/>
                             <constraint firstItem="bQF-Xd-ser" firstAttribute="top" secondItem="W69-hQ-Z2e" secondAttribute="bottom" constant="20" id="mdq-5j-86N"/>
                             <constraint firstItem="LjQ-Y4-RD3" firstAttribute="centerX" secondItem="PrR-ij-Hd1" secondAttribute="centerX" id="oLp-gR-yfg"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bountyLabel" destination="bQF-Xd-ser" id="p7k-da-lm9"/>
+                        <outlet property="bountyLabelCenterX" destination="Ti0-Xt-Rp5" id="hRk-ol-cCK"/>
                         <outlet property="imgView" destination="LjQ-Y4-RD3" id="Zek-8i-twm"/>
                         <outlet property="nameLabel" destination="W69-hQ-Z2e" id="VX4-za-Cil"/>
+                        <outlet property="nameLabelCenterX" destination="AIo-8u-yqz" id="8cV-tn-S01"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8h-UZ-rKN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
